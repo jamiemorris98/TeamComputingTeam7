@@ -19,13 +19,26 @@ void turnl(void);
 void turnr(void);
 
 int whitesqr, blacksqr = 0;
+
 int i = 0;
+
+int map[10][7] = {0,0,0,0,0,0,0,0,0,0,
+									0,0,0,0,0,0,0,0,0,0,
+									0,0,0,0,0,0,0,0,0,0,
+									0,0,0,0,0,0,0,0,0,0,
+									0,0,0,0,0,0,0,0,0,0,
+									0,0,0,0,0,0,0,0,0,0,
+									0,0,0,0,0,0,0,0,0,0};
+
+int countr, countc = 0;
 
 task main()
 {
 
-
 	int count = 0;
+
+
+
 
 
 	begin();
@@ -51,7 +64,7 @@ task main()
 
 void begin(void)
 {
-	while((getColorName(colorSensor) == colorWhite)||(getColorName(colorSensor) == colorBlack))
+	while((getColorName(colorSensor) == colorWhite)||(getColorName(colorSensor) == colorBlack)||(getColorName(colorSensor) == colorRed))
 	{
 		resetMotorEncoder(motorB);
 		resetMotorEncoder(motorC);
